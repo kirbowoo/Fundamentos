@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout<<"Bajo el cielo más puro de América";
+    cout<<endl<<"Y en la tierra de Ñuflo de Chávez";
+    cout<<endl<<"Libertad van trinando las aves";
+    cout<<endl<<"De sureste ostentando el primor";
+
+    return 0;
+}
