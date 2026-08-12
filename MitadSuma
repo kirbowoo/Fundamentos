@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main()
+{ 
+    float n1,n2,m;
+    cout<< "Ingresa el primer valor: ";
+    cin>>n1;
+    cout<< "Inserta el segundo valor: ";
+    cin>>n2;
+    m=(n1+n2)/2;
+    cout<< "La media de ambos numeros es: "<<m;
+    return 0;
+}
