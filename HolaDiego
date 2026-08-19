@@ -2,11 +2,11 @@
 using namespace std;
 int main()
 {
-    string n;
-    cout<<"Ingrese su nombre: "<<endl;
-    cin>>n;
+    string nombre;
+    cout<<"Ingrese su nombre: ";
+    cin>>nombre;
     cout<<"*****************************"<<endl;
-    cout<<"*       Me llamo "<<n<<"      *"<<endl;
+    cout<<"*       Me llamo "<<nombre<<"      *"<<endl;
     cout<<"*****************************";
     return 0;
 }
