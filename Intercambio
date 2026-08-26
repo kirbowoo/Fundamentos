@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a,b,i;
+    cout<<"Introduce el valor de a: ";
+    cin>>a;
+    cout<<"Introduce el valor de b: ";
+    cin>>b;
+    i=a;
+    a=b;
+    b=i;
+    cout<<"Valores intercambiados"<<endl;
+    cout<<"a="<<a<<endl;
+    cout<<"b="<<b;
+
+    return 0;
+}
