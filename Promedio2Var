@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,r=0;
+    cout<<"Inserta el primer numero: ";
+    cin>>n;
+    r=r+n;
+    cout<<"Inserta el segundo numero: ";
+    cin>>n;
+    r=r+n;
+    cout<<"Inserta el tercer numero: ";
+    cin>>n;
+    r=r+n;
+    cout<<"Inserta el cuarto numero: ";
+    cin>>n;
+    r=r+n;
+    cout<<"Inserta el quinto numero: ";
+    cin>>n;
+    r=r+n;
+    r=r/5;
+    cout<<"El promedio de los 5 numeros es: "<<r;
+    return 0;
+}
