@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   float b=3, cb=5, p=2, s=2.5, ch, chq, cp, cs, totalp=0;
+   int opcion; 
+   
+   cout<<"              Menu"<<endl;
+   cout<<"1. Hamburguesa ------------- (3Bs): "<<endl;
+   cout<<"2. Hamburguesa con queso --- (5Bs): "<<endl;
+   cout<<"3. Papas fritas ------------ (2Bs): "<<endl;
+   cout<<"4. Soda -------------------- (2.5Bs): "<<endl;
+   cout<<"0. Salir "<<endl;
+   cout<<"Escoja una opcion: ";
+   cin>>opcion;
+   
+    switch (opcion)
+    {
+       case 1:
+           cout<<"¿Cuantas Hamburguesas va a llevar?: ";
+           cin>>ch;
+           totalp=ch*b;
+           break;
+       case 2:
+           cout<<"¿Cuantas Hamburguesas con queso va a llevar?: ";
+           cin>>chq; 
+           totalp=chq*cb;
+           break;
+       case 3:
+           cout<<"¿Cuantas Papas fritas va a llevar?: ";
+           cin>>cp; 
+           totalp=cp*p;
+           break;
+       case 4:
+           cout<<"¿Cuantas Sodas va a llevar?: ";
+           cin>>cs; 
+           totalp=cs*s;
+           break;
+       case 0:
+           cout<<"Saliendo..."<<endl;
+           return 0;
+           
+       default: 
+           cout<<"Opcion invalida."<<endl;
+           break;
+    }
+    
+   cout<<"El total de tu compra es: "<<totalp<<"Bs."<<endl;
+   return 0;
+}
