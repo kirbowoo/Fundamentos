@@ -1,0 +1,86 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   float ch, chq, cp, cs, totalp,i=0,tf,ih=0,ihq=0,ip=0,is=0;
+   int opcion; 
+   do{
+   cout<<"              Menu"<<endl;
+   cout<<"1. Hamburguesa ------------- (3Bs): "<<endl;
+   cout<<"2. Hamburguesa con queso --- (5Bs): "<<endl;
+   cout<<"3. Papas fritas ------------ (2Bs): "<<endl;
+   cout<<"4. Soda -------------------- (2.5Bs): "<<endl;
+   cout<<"5. Salir."<<endl;
+   cout<<"0. Terminar pedido. "<<endl;
+   cout<<"Escoja una opcion: ";
+   cin>>opcion;
+   
+    switch (opcion)
+    {
+       case 1:
+           cout<<"¿Cuantas Hamburguesas va a llevar?: ";
+           cin>>ch;
+           if (ch>0){
+            totalp=ch*3;
+            ih=ch+ih;
+            i=totalp+i;
+            cout<<"Costo del pedido: "<<i<<"Bs."<<endl<<endl<<endl;
+           }
+           else{
+               cout<<"Pedido no valido."<<endl<<endl<<endl;
+           }
+           break;
+       case 2:
+           cout<<"¿Cuantas Hamburguesas con queso va a llevar?: ";
+           cin>>chq;
+           if (chq>0){
+           totalp=chq*5;
+           ihq=chq+ihq;
+           i=totalp+i;
+           cout<<"Costo del pedido: "<<i<<"Bs."<<endl<<endl;
+           }
+           else{
+               cout<<"Pedido no valido."<<endl<<endl<<endl;
+           }
+           break;
+       case 3:
+           cout<<"¿Cuantas Papas fritas va a llevar?: ";
+           cin>>cp; 
+           if (cp>0){
+           totalp=cp*2;
+           ip=cp+ip;
+           i=totalp+i;
+           cout<<"Costo del pedido: "<<i<<"Bs."<<endl<<endl<<endl;
+           }
+           else{
+               cout<<"Pedido no valido."<<endl<<endl<<endl;
+           }
+           break;
+       case 4:
+           cout<<"¿Cuantas Sodas va a llevar?: ";
+           cin>>cs; 
+           if (cs>0){
+           totalp=cs*2.5;
+           is=cs+is;
+           i=totalp+i;
+           cout<<"Costo del pedido: "<<i<<"Bs."<<endl<<endl<<endl;
+           }
+           else{
+               cout<<"Pedido no valido."<<endl<<endl<<endl;
+           }
+           break;
+        case 5:
+            cout<<"Saliendo...";
+            return 0;
+        case 0:
+        break;
+       default: 
+           cout<<"Opcion invalida."<<endl<<endl<<endl;
+           break;
+    }
+   } while (opcion!=0);
+   tf=i-totalp;
+   cout<<"Tu pedido es de "<<i<<"Bs. por la compra de "<<ih<<" Hamburguesas, "<<ihq<<" Hamburguesas con queso, "<<ip<<" Papas fritas y "<<is<<" Sodas.";
+   return 0;
+}
