@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    bool flag = true;
+    int n, cont = 2;
+    cout << "Ingrese un numero, se generaran los primos anteriores: ";
+    cin >> n;
+    while (cont < n)
+    {
+        flag = true;
+        for (int i = 2; i <= sqrt(cont); i++)
+            if (cont % i == 0) {
+                flag = false;
+                break;
+            }
+    
+        if(flag)
+            cout << cont << ",";
+        cont++;
+    }
+    return 0;
+}
