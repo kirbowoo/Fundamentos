@@ -1,0 +1,32 @@
+//Autor: Diego Rojas
+//Practico Digitos Ejercicio 6
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, t, d, bad = -1;
+    bool f = false;
+    cout << "Ingrese un numero: ";
+    cin >> n;
+    t = n;
+    if (t < 0) {
+        t = -t;
+    }
+    while (t > 0) {
+        d = t % 10;
+        if (d >= 8) {
+            f = true;
+            bad = d;
+            break;
+        }
+        t /= 10;
+    }
+    if (f) {
+        cout << "El numero " << n << " no corresponde a la base 8." << endl;
+        cout << "El digito " << bad << " no corresponde a la base 8." << endl;
+    }
+    else {
+        cout << "El numero " << n << " es un numero valido de base 8." << endl;
+    }
+    return 0;
+}
