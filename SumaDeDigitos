@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int numero, suma, division;
+    string opcion; 
+    do {
+        suma = 0; 
+        do {
+            cout << "Ingrese un numero: ";
+            cin >> numero;
+        } while (numero < 0);
+        while (numero != 0) {
+            division = numero % 10;
+            suma = suma + division;
+            numero = numero / 10;
+        }
+        cout << "La suma es: " << suma << endl;
+        cout << "desea continuar? (si/no): ";
+        cin >> opcion;
+    } while (opcion == "si" );
+    return 0;
+}
