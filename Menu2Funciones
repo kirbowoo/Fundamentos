@@ -1,0 +1,88 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+float elmenor(int a, int b);
+float signo(float c);
+float elevar(int n, int m);
+
+int main()
+{
+    float c;
+    int a, b, x, n, m, opcion;
+
+    do {
+        cout << "\t\t Menu \n";
+        cout << "\t\t ==== \n";
+        cout << "1. El menor de dos numeros\n";
+        cout << "2. El signo\n";
+        cout << "3. Elevacion\n";
+        cout << "0. Salir\n";
+        cout << "Opcion: ";
+        cin >> opcion;
+
+        switch (opcion)
+        {
+        case 1:
+            cout << "Ingrese el primer numero: ";
+            cin >> a;
+            cout << "Ingrese el segundo numero: ";
+            cin >> b;
+            cout << "El numero menor es: " << elmenor(a, b) << endl;
+            break;
+        case 2:
+            cout << "Ingrese el numero real: ";
+            cin >> c;
+            cout << "El signo del numero es: ";
+            x = signo(c);
+            cout << x << endl;
+            break;
+        case 3:
+            cout << "Ingrese el numero a elevar: ";
+            cin >> n;
+            cout << "Ingrese la potencia: ";
+            cin >> m;
+            cout << "El resultado es: " << elevar(n, m) << endl;
+            break;
+        case 0:
+            cout << "Saliendo del Menu\n";
+            break;
+        default:
+            cout << "ERROR de opcion\n";
+            break;
+        }
+        if (opcion != 0) {
+            cout << "\nPresione ENTER para continuar...";
+            cin.ignore();
+            cin.get();
+        }
+
+    } while (opcion != 0);
+
+    return 0;
+}
+
+// Declaración de funciones
+float elmenor(int a, int b) {
+    if (a > b)
+        return b;
+    else
+        return a;
+}
+
+float signo(float c) {
+    if (c == 0)
+        return 0;
+    else if (c < 0)
+        return -1;
+    else
+        return 1;
+}
+
+float elevar(int n, int m) {
+    int acum = 1;
+    for (int i = 1; i <= m; i++)
+        acum = acum * n;
+    return acum;
+}
