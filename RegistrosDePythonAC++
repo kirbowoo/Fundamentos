@@ -1,0 +1,272 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// VECTORES
+vector<vector<string>> usuarios;
+vector<vector<string>> personas;
+
+
+// REGISTRAR USUARIO
+void registrar_usuario() {
+    cout << "\n--- REGISTRAR USUARIO ---" << endl;
+    string usuario;
+    cout << "Ingrese usuario: ";
+    cin >> usuario;
+
+    // Verificar si el usuario ya existe
+    for (const auto& u : usuarios) {
+        if (u[0] == usuario) {
+            cout << "El usuario ya existe." << endl;
+            return;
+        }
+    }
+
+    string clave;
+    cout << "Ingrese contraseña: ";
+    cin >> clave;
+    
+    vector<string> nuevo_usuario = {usuario, clave};
+    usuarios.push_back(nuevo_usuario);
+    cout << "Usuario registrado correctamente." << endl;
+}
+
+
+// LISTAR USUARIOS
+void listar_usuarios() {
+    cout << "\n--- LISTA DE USUARIOS ---" << endl;
+
+    if (usuarios.size() == 0) {
+        cout << "No hay usuarios registrados." << endl;
+    } else {
+        for (size_t i = 0; i < usuarios.size(); i++) {
+            cout << "\nUsuario Nro: " << i + 1 << endl;
+            cout << "Usuario: " << usuarios[i][0] << endl;
+        }
+    }
+}
+
+
+// MODIFICAR USUARIO
+void modificar_usuario() {
+    cout << "\n--- MODIFICAR USUARIO ---" << endl;
+    string nombre;
+    cout << "Ingrese el usuario que desea modificar: ";
+    cin >> nombre;
+
+    for (auto& u : usuarios) {
+        if (u[0] == nombre) {
+            cout << "Nuevo nombre de usuario: ";
+            cin >> u[0];
+            cout << "Nueva contraseña: ";
+            cin >> u[1];
+            cout << "Usuario modificado correctamente." << endl;
+            return;
+        }
+    }
+
+    cout << "Usuario no encontrado." << endl;
+}
+
+
+// BORRAR USUARIO
+void borrar_usuario() {
+    cout << "\n--- BORRAR USUARIO ---" << endl;
+    string nombre;
+    cout << "Ingrese el usuario que desea eliminar: ";
+    cin >> nombre;
+
+    for (auto it = usuarios.begin(); it != usuarios.end(); ++it) {
+        if ((*it)[0] == nombre) {
+            usuarios.erase(it);
+            cout << "Usuario eliminado correctamente." << endl;
+            return;
+        }
+    }
+
+    cout << "Usuario no encontrado." << endl;
+}
+
+
+// INICIAR SESION
+bool login() {
+    cout << "\n--- INICIAR SESION ---" << endl;
+    string usuario, clave;
+    cout << "Usuario: ";
+    cin >> usuario;
+    cout << "Contraseña: ";
+    cin >> clave;
+
+    for (const auto& u : usuarios) {
+        if (u[0] == usuario && u[1] == clave) {
+            cout << "Bienvenido " << usuario << endl;
+            return true;
+        }
+    }
+
+    cout << "Usuario o contraseña incorrectos." << endl;
+    return false;
+}
+
+
+// REGISTRAR PERSONA
+void registrar_persona() {
+    cout << "\n--- REGISTRAR PERSONA ---" << endl;
+
+    string nombre, edad, ci, direccion, telefono;
+    cout << "Nombre: ";
+    cin >> nombre;
+    cout << "Edad: ";
+    cin >> edad;
+    cout << "CI: ";
+    cin >> ci;
+    cout << "Direccion: ";
+    cin >> direccion;
+    cout << "Telefono: ";
+    cin >> telefono;
+
+    vector<string> persona = {nombre, edad, ci, direccion, telefono};
+    personas.push_back(persona);
+
+    cout << "Persona registrada correctamente." << endl;
+}
+
+
+// LISTAR PERSONAS
+void listar_personas() {
+    cout << "\n--- LISTA DE PERSONAS ---" << endl;
+
+    if (personas.size() == 0) {
+        cout << "No existen personas registradas." << endl;
+    } else {
+        for (size_t i = 0; i < personas.size(); i++) {
+            cout << "\nPersona Nro: " << i + 1 << endl;
+            cout << "Nombre: " << personas[i][0] << endl;
+            cout << "Edad: " << personas[i][1] << endl;
+            cout << "CI: " << personas[i][2] << endl;
+            cout << "Direccion: " << personas[i][3] << endl;
+            cout << "Telefono: " << personas[i][4] << endl;
+        }
+    }
+}
+
+
+// BORRAR PERSONA
+void borrar_persona() {
+    cout << "\n--- BORRAR PERSONA ---" << endl;
+    string ci;
+    cout << "Ingrese el CI: ";
+    cin >> ci;
+
+    for (auto it = personas.begin(); it != personas.end(); ++it) {
+        if ((*it)[2] == ci) {
+            personas.erase(it);
+            cout << "Persona eliminada correctamente." << endl;
+            return;
+        }
+    }
+
+    cout << "Persona no encontrada." << endl;
+}
+
+
+// MODIFICAR PERSONA
+void modificar_persona() {
+    cout << "\n--- MODIFICAR PERSONA ---" << endl;
+    string ci;
+    cout << "Ingrese el CI de la persona: ";
+    cin >> ci;
+
+    for (auto& p : personas) {
+        if (p[2] == ci) {
+            cout << "Nuevo nombre: ";
+            cin >> p[0];
+            cout << "Nueva edad: ";
+            cin >> p[1];
+            cout << "Nuevo CI: ";
+            cin >> p[2];
+            cout << "Nueva direccion: ";
+            cin >> p[3];
+            cout << "Nuevo telefono: ";
+            cin >> p[4];
+
+            cout << "Persona modificada correctamente." << endl;
+            return;
+        }
+    }
+
+    cout << "Persona no encontrada." << endl;
+}
+
+
+// MENU DE PERSONAS
+void menu_personas() {
+    while (true) {
+        cout << "\n===== MENU DE PERSONAS =====" << endl;
+        cout << "1. Registrar persona" << endl;
+        cout << "2. Listar personas" << endl;
+        cout << "3. Modificar persona" << endl;
+        cout << "4. Borrar persona" << endl;
+        cout << "5. Cerrar sesion" << endl;
+
+        string op;
+        cout << "Seleccione una opcion: ";
+        cin >> op;
+
+        if (op == "1") {
+            registrar_persona();
+        } else if (op == "2") {
+            listar_personas();
+        } else if (op == "3") {
+            modificar_persona();
+        } else if (op == "4") {
+            borrar_persona();
+        } else if (op == "5") {
+            cout << "Sesion cerrada." << endl;
+            break;
+        } else {
+            cout << "Opcion incorrecta." << endl;
+        }
+    }
+}
+
+
+// MENU PRINCIPAL DE USUARIOS
+int main() {
+    while (true) {
+        cout << "\n===== SISTEMA DE LOGIN =====" << endl;
+        cout << "1. Registrar usuario" << endl;
+        cout << "2. Listar usuarios" << endl;
+        cout << "3. Modificar usuario" << endl;
+        cout << "4. Borrar usuario" << endl;
+        cout << "5. Iniciar sesion" << endl;
+        cout << "6. Salir" << endl;
+
+        string op;
+        cout << "Seleccione una opcion: ";
+        cin >> op;
+
+        if (op == "1") {
+            registrar_usuario();
+        } else if (op == "2") {
+            listar_usuarios();
+        } else if (op == "3") {
+            modificar_usuario();
+        } else if (op == "4") {
+            borrar_usuario();
+        } else if (op == "5") {
+            if (login()) {
+                menu_personas();
+            }
+        } else if (op == "6") {
+            cout << "Gracias por utilizar el sistema." << endl;
+            break;
+        } else {
+            cout << "Opcion incorrecta." << endl;
+        }
+    }
+
+    return 0;
+}
