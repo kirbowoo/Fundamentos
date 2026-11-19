@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    int cont=0,n,suma=0;
+    cout<<"Cuantos cuadrados quieres sumar? ";
+    cin>>n;
+    while (cont<n) {
+        cont= cont+1;
+        cout<<cont<<" , ";
+        suma= suma + pow(cont,2);
+    }
+
+    cout<<endl<<"La suma es igual a: "<<suma;
+    return 0;
+}
