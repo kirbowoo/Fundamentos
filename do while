@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int cont=0;
+    do {
+        cont=cont+1;
+        cout<<cont;
+        
+    }while (cont != 10);
+
+    return 0;
+}
