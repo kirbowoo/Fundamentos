@@ -1,0 +1,164 @@
+#include <iostream>
+#include <string>
+#define MAX 100
+
+//prototipo de funciones
+bool validar_fecha(string fecha);
+void registrar_usuarios(string usuarios[], string contrasena[]);
+void listar_usuarios(string usuarios[]);
+void modificar_usuarios(string usuarios[]);
+void borrar_usuario(string usuarios[], string contrasena[]);
+void login(string usuarios[], string contrasena[]);
+void registrar_personas(string nombres[], string fechas[], string ci[],
+	string direcciones[], string telefonos[]);
+void listar_personas(string nombres[], string fechas[], string ci[],
+	string direcciones[], string telefonos[]);
+void borrar_persona(string nombres[], string fechas[], string ci[],
+	string direcciones[], string telefonos[], string carnet);
+void modificar_persona(string nombres[], string fechas[], string ci[],
+	string direcciones[], string telefonos[], string carnet);
+void menu_personas(int opcion);
+
+int main() {
+	bool flag = true;
+	while (flag) {
+
+		int opcion;
+		string fecha, fechas[MAX], usuarios[MAX], contrasenas[MAX], nombres[MAX],
+			telefonos[MAX], ci[MAX], carnet;
+
+		cout << "========== SISTEMA DE LOGIN ==========" << endl;
+		cout << "1. Registrar usuario " << endl;
+		cout << "2. Listar usuarios " << endl;
+		cout << "3. Modificar usuario " << endl;
+		cout << "4. Borrar usuario " << endl;
+		cout << "5. Iniciar sesion " << endl;
+		cout << "0. Salir " << endl;
+
+		cout << "Seleccione una opcion: ";
+		cin >> opcion;
+
+		swich(opcion) {
+
+			case 1:
+
+				registrar_usuarios(usuarios, contrasenas);
+				break;
+
+			case 2:
+
+				listar_usuarios(usuarios);
+				break;
+
+			case 3:
+
+				modificar_usuarios(usuarios);
+				break;
+
+			case 4:
+
+				borrar_usuario(usuarios, contrasenas);
+				break;
+
+			case 5:
+
+				login(usuarios, contrasenas);
+				break;
+
+			case 0:
+
+				cout << "Gracias por utilizar el sistema";
+				return 0;
+
+			default:
+
+				cout << "Opcion incorrecta";
+
+
+		}
+
+	}
+	return 0;
+}
+
+bool validar_fecha(string fecha) {
+
+
+}
+
+void registrar_usuarios(string usuarios[], string contrasena[]) {
+
+
+}
+
+void listar_usuarios(string usuarios[]) {
+	cout << "---- LISTA DE PERSONAS -----" << endl;
+	if (usuarios.empity())
+		cout << "No hay usuarios ingresados aun.";
+
+	else
+		for (int i = 0; i < usuarios.size(); i++)¨{
+			cout << i + 1 << ".- " << nombres(i) << endl;
+			cout << "Fecha de nacimiento: " << fechas[i]);
+			cout << "Ci: " << ci[i];
+			cout << "Direccion: " << direcciones[i];
+			cout << "Telefono: " << telefonos[i];
+		}
+
+}
+
+void modificar_usuarios(string usuarios[]) {
+
+
+}
+
+void borrar_usuario(string usuarios[], string contrasena[]) {
+
+
+}
+
+void login(string usuarios[], string contrasena[]){
+
+
+}
+
+void registrar_personas(string nombres[], string fechas[], string ci[],
+	string direcciones[], string telefonos[]) {
+
+
+}
+
+void listar_personas(string nombres[], string fechas[], string ci[],
+	string direcciones[], string telefonos[]) {
+
+	cout << "---- LISTA DE PERSONAS -----" << endl;
+	if (usuarios.empity())
+		cout << "No hay usuarios ingresados aun.";
+
+	else
+		for (int i = 0; i < usuarios.size(); i++)¨{
+			cout << i + 1 << ".- " << nombres(i) << endl;
+			cout << "Fecha de nacimiento: " << fechas[i]);
+			cout << "Ci: " << ci[i];
+			cout << "Direccion: " << direcciones[i];
+			cout << "Telefono: " << telefonos[i];
+		}
+
+}
+
+void borrar_persona(string nombres[], string fechas[], string ci[],
+	string direcciones[], string telefonos[], string carnet) {
+
+
+}
+
+void modificar_persona(string nombres[], string fechas[], string ci[],
+	string direcciones[], string telefonos[], string carnet) {
+
+
+}
+
+void menu_personas(int opcion) {
+
+
+}
