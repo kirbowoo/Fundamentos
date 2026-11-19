@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+
+    int count=0,n,suma=0;
+
+    cout<<"Introduce el ultimo numero a sumar: ";
+    cin>>n;
+    cout<<"S = ";
+    
+    do {
+        count += 1;
+        suma += pow(count, 2);
+        cout << count << "²";
+
+        if(count<n)
+            cout << " + ";
+            
+    } while(count<n);
+
+    cout<<" = "<<suma<<endl;
+
+    return 0;
+}
